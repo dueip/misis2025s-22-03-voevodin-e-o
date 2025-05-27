@@ -2,6 +2,10 @@
 #include <fstream>
 #include <iostream>
 
+#ifdef _WIN32
+#include <Windows.h>
+#endif
+
 std::string strid_from_mat(const cv::Mat& img, const int n)
 {
     using namespace misis;
@@ -64,7 +68,7 @@ std::vector<std::filesystem::path> get_list_of_file_paths(const std::filesystem:
 		return files;
 	}
 
-	while (std::getline(lstfile, line)) 
+	while (std::getline(lstfile, line))
 	{
 		std::filesystem::path current_file_path = path_lst.parent_path().concat("/" + line);
 		files.push_back(current_file_path);
@@ -73,4 +77,12 @@ std::vector<std::filesystem::path> get_list_of_file_paths(const std::filesystem:
 	lstfile.close();
 
 	return files;
+}
+
+bool misis::is_debugger_present()
+{
+#ifdef _WIN32
+	return IsDebuggerPresent();
+#endif
+	return false;
 }

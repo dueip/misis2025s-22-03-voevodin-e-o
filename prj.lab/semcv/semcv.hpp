@@ -40,7 +40,12 @@ namespace misis
         constexpr TYPE real32 = "real32";
         constexpr TYPE real64 = "real64";
     }
+    bool is_debugger_present();
 }
+
+
+
+
 
 std::string strid_from_mat(const cv::Mat& img, const int n = 4);
 
