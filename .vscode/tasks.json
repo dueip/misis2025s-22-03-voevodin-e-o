@@ -1,0 +1,49 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cmake",
+			"label": "CMake: build",
+			"command": "build",
+			"targets": [
+				"all"
+			],
+			"preset": "${command:cmake.activeBuildPresetName}",
+			"group": "build",
+			"problemMatcher": [],
+			"detail": "CMake template build task",
+		},
+		{
+			"label": "Build & Run",
+			"type": "shell",
+			"command": "${workspaceFolder}\\build\\${input:buildConfig}\\semcv.exe",
+			"problemMatcher": [],
+			"detail": "Try to run the app"
+		},
+		{
+			"label": "Cmake: Run Target",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"--build",
+				"${workspaceFolder}\\build",
+				"--config",
+				"${input:buildConfig}",
+				"--target",
+				"RUN_TARGET"
+			]
+		}
+	],
+	"inputs": [
+		{
+			"id": "buildConfig",
+			"type": "pickString",
+			"options": [
+				"Debug",
+				"Release"
+			],
+			"default": "Debug",
+			"description": "build type"
+		},
+	]
+}
