@@ -5,8 +5,8 @@
 #include <filesystem>
 #include <string>
 #include <vector>
-
-#include <opencv2/core/mat.hpp>
+#include <opencv2/opencv.hpp>
+#include <opencv2/highgui.hpp>
 
 namespace misis 
 {
@@ -40,12 +40,21 @@ namespace misis
         constexpr TYPE real32 = "real32";
         constexpr TYPE real64 = "real64";
     }
+
+    struct Vector3 final
+    {
+        int x = 0;
+        int y = 0;
+        int z = 0;
+    };
+
+    constexpr double CircleRadius = 83.0;
+    constexpr double CanvasSize = 256;
+
     bool is_debugger_present();
 }
 
-
-
-
+cv::Mat add_noise_gau(const cv::Mat& img, const int std);
 
 std::string strid_from_mat(const cv::Mat& img, const int n = 4);
 
