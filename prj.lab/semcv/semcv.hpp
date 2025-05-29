@@ -41,6 +41,12 @@ namespace misis
         constexpr TYPE real64 = "real64";
     }
 
+    namespace AutocontractType
+    {
+        constexpr TYPE naive = "naive";
+        constexpr TYPE rgb = "rgb";
+    }
+
     struct Vector3 final
     {
         int x = 0;
@@ -61,5 +67,9 @@ std::string strid_from_mat(const cv::Mat& img, const int n = 4);
 std::vector<std::filesystem::path> get_list_of_file_paths(const std::filesystem::path& path_lst);
     
 cv::Mat gen_tgtimg00(const int lev0, const int lev1, const int lev2);
+
+cv::Mat autocontrast(const cv::Mat& img, const double q_black, const double q_white);
+
+cv::Mat autocontrast_rgb(const cv::Mat& img, const double q_black, const double q_white);
 
 #endif
