@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Projects\misis2025s-3-voevodin-e-o\prj.cw\src\gldm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\misis2025s-3-voevodin-e-o\prj.cw\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\misis2025s-3-voevodin-e-o\prj.cw\src\extractor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Projects\misis2025s-3-voevodin-e-o\prj.cw\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B9206A6A-0E84-3918-808A-0CD90C5C6B5E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
