@@ -22,18 +22,18 @@
 # Установка проекта
 1) Клонирование проекта
 ```bash
-    git clone https://github.com/dueip/misis2025s-22-03-voevodin-e-o.git && cd misis2025s-22-03-voevodin-e-o"
+git clone https://github.com/dueip/misis2025s-22-03-voevodin-e-o.git && cd misis2025s-22-03-voevodin-e-o"
 ```
 2) Сборка проекта
 ```bash
-    mkdir build
-    cd build
-    cmake ..
-    cmake -build . --config Release
+mkdir build
+cd build
+cmake ..
+cmake -build . --config Release
 ```
 3) Установка проекта
 ```bash
-    cmake --install .
+cmake --install .
 ``` 
    
 Также в данном репозитории присутствуют лабораторные работы по курсу. После запуска CMake build, лабораторные работы не будут сбилжены и установлены, если не указать флаг BUILD_LABS:
