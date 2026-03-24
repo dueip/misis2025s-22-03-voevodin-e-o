@@ -14,7 +14,7 @@
 
 # Используемые технологии:
 
-- OpenVC
+- OpenCV
 - C++20
 - CMake
 - Doxygen
