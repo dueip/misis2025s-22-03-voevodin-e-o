@@ -419,3 +419,4 @@ out/
 /CMakeUserPresets.json
 /vcpkg-configuration.json
 /vcpkg.json
+vcpkg_installed/
