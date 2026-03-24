@@ -1,3 +1,0 @@
-D:/Projects/misis2025s-3-voevodin-e-o/prj.cw/build/CMakeFiles/gldm.dir
-D:/Projects/misis2025s-3-voevodin-e-o/prj.cw/build/CMakeFiles/ALL_BUILD.dir
-D:/Projects/misis2025s-3-voevodin-e-o/prj.cw/build/CMakeFiles/ZERO_CHECK.dir
