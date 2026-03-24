@@ -13,6 +13,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELWITHDEBINFO ${CMAKE_CURRENT_SOURCE_DIR}/bi
 
 find_package(OpenCV REQUIRED)
 
+
 option(BUILD_COURSEWORK "Build prj.cw" on)
 option(BUILD_LABS "Build prj.lab" off)
 

@@ -3,6 +3,14 @@
 #include "extractor.hpp"
 #include <filesystem>
 
+/// \brief Функция создает генератор, а далее генерирует 6 тестовых изображений:
+/// - low_gray - изображение с низким уровнем серого
+/// - uniform_dep - изображение с высокой однородностью
+/// - nonuniform_dep - изображение с высокой неравнамерностью
+/// - noise - изображение с случайным шумом
+/// - gradient - градиентное изображение
+/// - spot - изображение с круглым пятном в центре
+/// \param[in] path путь до папки, в которую будут сгенерированы данные изображения.
 void generateTestImages(const std::filesystem::path& path) {
     if (path.has_filename())
     {
@@ -20,6 +28,16 @@ void generateTestImages(const std::filesystem::path& path) {
 
 #include <opencv2/highgui.hpp>
 
+/// \brief Функция рисует текстовую подпись на изображении с полупрозрачным фоном.
+/// \param[in,out] image Изображение OpenCV (`cv::Mat`), на котором будет нарисован текст.
+/// \param[in] text Строка текста, которая будет отображена.
+/// \param[in] origin Координаты нижнего левого угла текста на изображении.
+/// \param[in] fontFace Шрифт текста.
+/// \param[in] fontScale Масштаб шрифта.
+/// \param[in] thickness Толщина линий текста.
+/// \param[in] textColor Цвет текста в формате.
+/// \param[in] bgColor Цвет фона под текстом.
+/// \param[in] alpha Прозрачность фона.
 static void drawLabelWithBackground(cv::Mat& image,
     const std::string& text,
     cv::Point origin,
@@ -55,6 +73,10 @@ static void drawLabelWithBackground(cv::Mat& image,
         cv::LINE_AA);
 }
 
+
+/// \brief Функция отображает результаты анализа GLDM в графическом интерфейсе.
+/// \param[in] results Результаты анализов.
+/// \note Функция блокирует выполнение на каждом изображении до нажатия клавиши.
 void showGuiResults(const std::vector<misis::AnalysisResult>& results)
 {
     for (const auto& res : results)

@@ -5,7 +5,7 @@ void misis::GLDMExtractor::saveSummaryToFile(const std::string& originalName, co
     std::string outName = output_path + "summary_" + originalName + ".txt";
     std::ofstream file(outName);
 
-    CheckReturn(file.is_open());
+    CheckReturn_Void(file.is_open());
 
     file << "GLDM Feature Analysis Summary for Image: " << originalName << "\n";
     file << "----------------------------------------------\n";
