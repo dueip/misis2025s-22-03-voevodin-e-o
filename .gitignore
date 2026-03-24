@@ -405,3 +405,7 @@ FodyWeavers.xsd
 bin.dbg/
 **/buid
 build/**
+
+.vscode/
+prj.cw/build/
+out/
