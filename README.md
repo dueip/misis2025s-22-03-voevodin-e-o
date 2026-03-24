@@ -21,22 +21,32 @@
 
 # Установка проекта
 1) Клонирование проекта
-    `git clone https://github.com/dueip/misis2025s-22-03-voevodin-e-o.git && cd misis2025s-22-03-voevodin-e-o"`
+```bash
+    git clone https://github.com/dueip/misis2025s-22-03-voevodin-e-o.git && cd misis2025s-22-03-voevodin-e-o"
+```
 2) Сборка проекта
-    `mkdir build`
-    `cd build`
-    `cmake ..`
-    `cmake -build . --config Release`
+```bash
+    mkdir build
+    cd build
+    cmake ..
+    cmake -build . --config Release
+```
 3) Установка проекта
-    `cmake --install .` 
+```bash
+    cmake --install .
+``` 
    
 Также в данном репозитории присутствуют лабораторные работы по курсу. После запуска CMake build, лабораторные работы не будут сбилжены и установлены, если не указать флаг BUILD_LABS:
-`cmake .. -DBUILD_LABS=On`
+```bash
+cmake .. -DBUILD_LABS=On
+```
 
 # Запуск приложения
-Для запуска приложения необходимо перейти в папку, в которую был установлен проект с помощью команды --install
-`cd <INSTALL_DIR>/bin`
-`./gldm.exe`
+Для запуска приложения необходимо перейти в папку, в которую был установлен проект с помощью команды `--install`:
+```bash
+cd <INSTALL_DIR>/bin
+./gldm.exe
+```
 
 После запуска приложения выведится справка с объяснением каждой команды:
 - `--generate <dir>` — генерировать новые тестовые изображения и сохранять их в папку <dir>
