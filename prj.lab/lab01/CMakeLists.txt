@@ -5,3 +5,6 @@ find_package(OpenCV REQUIRED)
 
 target_link_libraries(task01-01 PRIVATE opencv_core opencv_highgui semcv)
 target_link_libraries(task01-02 PRIVATE opencv_core opencv_highgui semcv)
+
+install_lab(task01-01 01)
+install_lab(task01-02 01)

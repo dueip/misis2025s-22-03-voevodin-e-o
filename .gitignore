@@ -405,7 +405,15 @@ FodyWeavers.xsd
 bin.dbg/
 **/buid
 build/**
+bin.rel/
+bin.relwithdbg/
+bin/
+build/
 
 .vscode/
 prj.cw/build/
 out/
+
+/CMakeUserPresets.json
+/vcpkg-configuration.json
+/vcpkg.json
