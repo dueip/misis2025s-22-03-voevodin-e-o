@@ -51,7 +51,7 @@ namespace misis {
 
         /// \brief Конструктор с загрузкой изображения.
         /// \param[in] img Путь к изображению.
-        GLDM(const std::filesystem::path& img);
+        GLDM(const std::filesystem::path& img, const Real alpha, const Real delta);
 
         /// \brief Деструктор по умолчанию.
         ~GLDM() = default;
@@ -59,7 +59,7 @@ namespace misis {
         /// \brief Загружает изображение из файла.
         /// \param[in] img Путь к изображению.
         /// \return `true`, если изображение успешно загружено, иначе `false`.
-        bool readImage(const std::filesystem::path& img);
+        bool readImage(const std::filesystem::path& img, const Real alpha, const Real delta);
 
         /// \brief Вычисляет GLDM и соответствующие признаки.
         /// \param[in] delta Параметр допуска для определения зависимостей уровней серого.
@@ -79,7 +79,6 @@ namespace misis {
         
         /// \brief Возвращает значение признака Low Gray Level Emphasis (LGLE).
         Real [[nodiscard]] getLowGrayLevelEmphasisFeatureValue() const;
-
 
     private:
         cv::Mat image; ///< Изображение для анализа.

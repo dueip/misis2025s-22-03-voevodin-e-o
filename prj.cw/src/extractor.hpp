@@ -46,6 +46,11 @@ namespace misis
         /// \brief Выполняет анализ изображения и возвращает результаты.
         /// \param[in] ImagePath Путь к анализируемому изображению..
         AnalysisResult analyze(const std::string& ImagePath);
+
+         /// \brief Устанавливает параметры alpha и delta для GLDM.
+         /// \param[in] alpha Кастомная альфа.
+         /// \param[in] delta Кастомная дельта.
+        void setParams(const Real alpha, const Real delta);
     private:
         /// \brief Сохраняет результаты анализа в txt.
         /// \param[in] originalName Имя изображеения.
@@ -54,6 +59,8 @@ namespace misis
         /// \param[in] DN Значение признака DN.
         void saveSummaryToFile(const std::string& originalName, const std::string& output_path, misis::Real LGLE, misis::Real DN);
         
+        Real alpha;
+        Real delta;
     };
 }
 

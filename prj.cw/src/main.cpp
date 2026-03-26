@@ -189,6 +189,7 @@ int main(int argc, char* argv[]) {
     if (!imagesToAnalyze.empty()) {
         misis::GLDMExtractor& extractor = misis::GLDMExtractor::get();
         for (const std::string& img : imagesToAnalyze) {
+            extractor.setParams(alpha, delta);
             extractor.analyzeAndSaveSummary(img, outputDir.string());
             guiResults.push_back(extractor.analyze(img));
         }

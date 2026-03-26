@@ -30,7 +30,7 @@ void misis::GLDMExtractor::saveSummaryToFile(const std::string& originalName, co
 
 void misis::GLDMExtractor::analyzeAndSaveSummary(const std::string& imagePath, const std::string& output_path) {
 
-    misis::GLDM gldm(imagePath);
+    misis::GLDM gldm(imagePath, alpha, delta);
     double LGLE = gldm.getLowGrayLevelEmphasisFeatureValue();
     double DN = gldm.getDependenceNonUniformityFeatureValue();
 
@@ -38,6 +38,12 @@ void misis::GLDMExtractor::analyzeAndSaveSummary(const std::string& imagePath, c
     std::string nameOnly = (pos != std::string::npos) ? imagePath.substr(pos + 1) : imagePath;
 
     saveSummaryToFile(nameOnly, output_path, LGLE, DN);
+}
+
+void misis::GLDMExtractor::setParams(const Real alpha, const Real delta)
+{
+    this->alpha = alpha;
+    this->delta = delta;
 }
 
 misis::AnalysisResult misis::GLDMExtractor::analyze(const std::string& imagePath)
@@ -48,7 +54,7 @@ misis::AnalysisResult misis::GLDMExtractor::analyze(const std::string& imagePath
             return { imagePath, -1, -1, "Invalid" };
         }
 
-        misis::GLDM gldm(imagePath);
+        misis::GLDM gldm(imagePath, alpha, delta);
         double LGLE = gldm.getLowGrayLevelEmphasisFeatureValue();
         double DN = gldm.getDependenceNonUniformityFeatureValue();
 

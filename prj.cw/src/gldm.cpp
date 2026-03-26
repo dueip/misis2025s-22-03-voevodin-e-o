@@ -4,18 +4,18 @@ using namespace misis;
 
 
 
-GLDM::GLDM(const std::filesystem::path& img)
+GLDM::GLDM(const std::filesystem::path& img, const Real alpha, const Real delta)
 {
-    readImage(img);
+    readImage(img, alpha, delta);
 }
 
-bool GLDM::readImage(const std::filesystem::path& img)
+bool GLDM::readImage(const std::filesystem::path& img, const Real alpha, const Real delta)
 {
     try
     {
         image = cv::imread(img.string());
         CheckReturn(isImageLoaded(), false);
-        computeGLDM(2, 3);
+        computeGLDM(alpha, delta);
         return true;
     }
     catch (...)
